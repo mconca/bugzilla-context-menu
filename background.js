@@ -28,7 +28,6 @@ browser.contextMenus.onClicked.addListener((info, tab) => {
         url = url + "buglist.cgi?quicksearch=" + encodeURIComponent(selectedText);
       }
 
-      console.log(url);
-      browser.tabs.create({url: url});
+      browser.tabs.create({url: url, openerTabId: tab.id});
   }
 });
